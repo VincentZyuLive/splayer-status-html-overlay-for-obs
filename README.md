@@ -2,6 +2,8 @@
 
 专为 [SPlayer-Next](https://github.com/realless/SPlayer-Next) 打造的 OBS 浏览器源音乐/歌词挂件。
 
+也可以配合 [VincentZyu 的 go-musicfox fork](https://github.com/VincentZyuLive/go-musicfox-vincentzyu-fork) 使用，通过 SPlayer-Next 兼容 HTTP/WS 接口对接。
+
 ## 🖼️ 预览
 
 > ↓ 透明浮层效果：独立展示歌曲封面、歌名、歌词、播放进度与时间。
