@@ -1,6 +1,6 @@
 # 🎵 SPlayer-Next OBS 直播透明歌词挂件
 
-专为 [SPlayer-Next](https://github.com/realless/SPlayer-Next) 打造的 OBS 浏览器源音乐/歌词挂件。
+专为 [SPlayer-Next](https://github.com/SPlayer-Dev/SPlayer-Next) 打造的 OBS 浏览器源音乐/歌词挂件。
 
 也可以配合 [VincentZyu 的 go-musicfox fork](https://github.com/VincentZyuLive/go-musicfox-vincentzyu-fork) 使用，通过 SPlayer-Next 兼容 HTTP/WS 接口对接。
 
@@ -228,6 +228,6 @@ SPlayer-Next 的外部 API 默认没有额外的访问控制。`host` 应只绑�
 
 ## 🔗 相关链接
 
-- [SPlayer-Next](https://github.com/realless/SPlayer-Next)
+- [SPlayer-Next](https://github.com/SPlayer-Dev/SPlayer-Next)
 - [LXGW WenKai](https://github.com/lxgw/LxgwWenKai)
 - [旧 Gist](https://gist.github.com/VincentZyu233/d2d70cfdf3403f352c407c458e021ed5)
