@@ -4,6 +4,10 @@
 
 ## 🖼️ 预览
 
+> ↓ 透明浮层效果：独立展示歌曲封面、歌名、歌词、播放进度与时间。
+
+![透明浮层效果](docs/preview.overlay-only.png)
+
 > ↓ OBS 端效果：浏览器源 `splayer-overlay` 叠加在 OBS 中，展示封面、歌曲信息、三行歌词与播放时间。
 
 ![OBS 端效果](docs/preview.obs.png)
