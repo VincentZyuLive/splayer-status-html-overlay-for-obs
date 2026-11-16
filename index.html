@@ -572,6 +572,7 @@
       if (statusData.position !== undefined) {
         state.positionMs = statusData.position;
         state.lastTickAt = Date.now();
+        updateProgressBar();
       }
       updateTimeDisplay();
     }
