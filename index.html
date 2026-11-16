@@ -504,7 +504,7 @@
       const artists = (track.artists || []).map(a => (typeof a === "string" ? a : a.name)).join(" / ");
       dom.trackArtist.innerText = artists ? `· ${artists}` : "";
 
-      const coverUrl = track.cover || track.coverOriginal;
+      const coverUrl = track.cover || track.coverOriginal || track.coverUrl || track.picUrl;
       if (coverUrl) {
         dom.coverImg.src = coverUrl;
         dom.coverImg.style.display = "block";
