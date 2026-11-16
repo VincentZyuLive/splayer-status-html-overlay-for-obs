@@ -362,6 +362,7 @@
       isPlaying: false,
       lastTickAt: Date.now(),
       currentLyricIndex: -1,
+      lastPolledTrackId: "",
     };
 
     // DOM 元素引用
@@ -463,6 +464,33 @@
         }
         fetchLyrics();
         fetchStatus();
+      } catch (e) {}
+    }
+
+    /** HTTP 兜底同步曲目，避免 WebSocket 不可用时只更新进度 */
+    async function fetchNowPlaying() {
+      try {
+        const res = await fetch(`http://${CONFIG.apiHost}:${CONFIG.apiPort}/api/now-playing`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data?.track) return;
+
+        const track = data.track?.track || data.track;
+        if (!state.track || state.track.id !== track.id) {
+          state.lastPolledTrackId = track.id || "";
+          updateTrack(track);
+          await fetchLyrics();
+        }
+
+        if (data.position !== undefined) {
+          state.positionMs = data.position;
+          state.lastTickAt = Date.now();
+        }
+        if (data.state !== undefined) {
+          state.isPlaying = data.state === "playing";
+        }
+        updateProgressBar();
+        updateTimeDisplay();
       } catch (e) {}
     }
 
@@ -675,7 +703,9 @@
     window.addEventListener("DOMContentLoaded", () => {
       applyAutoScaling();
       initConnection();
+      fetchNowPlaying();
       requestAnimationFrame(renderLoop);
+      setInterval(fetchNowPlaying, CONFIG.pollIntervalMs);
       setInterval(fetchStatus, CONFIG.pollIntervalMs);
     });
     window.addEventListener("resize", applyAutoScaling);

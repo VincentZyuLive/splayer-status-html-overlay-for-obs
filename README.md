@@ -26,6 +26,7 @@
 ## ✨ 功能
 
 - 直接连接 SPlayer-Next 的本地 HTTP / WebSocket 接口，OBS 内独立渲染
+- WebSocket 实时更新，HTTP `/api/now-playing` 轮询作为封面和歌曲信息兜底
 - 最小化或失焦 SPlayer 后仍可正常显示
 - 原文、中文翻译、罗马音三行歌词，纯中文歌自动隐藏多余行
 - 封面、歌曲信息、播放进度和时间戳
