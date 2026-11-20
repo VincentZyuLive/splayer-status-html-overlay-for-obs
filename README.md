@@ -6,9 +6,9 @@
 
 ## 🖼️ 预览
 
-> ↓ 透明浮层效果：独立展示歌曲封面、歌名、歌词、播放进度与时间。
+> ↓ 透明浮层动态效果：独立展示歌曲封面、歌名、歌词、播放进度与时间（动图实机录制）。
 
-![透明浮层效果](docs/images/preview/preview.overlay-only.png)
+![透明浮层动态效果](docs/images/preview/preview.overlay-only.gif)
 
 > ↓ OBS 端效果：浏览器源 `splayer-overlay` 叠加在 OBS 中，展示封面、歌曲信息、三行歌词与播放时间。
 
@@ -45,6 +45,7 @@
 ├── docs/
 │   └── images/
 │       └── preview/
+│           ├── preview.overlay-only.gif # 独立浮层动态演示
 │           ├── preview.obs.png          # OBS 端预览
 │           ├── preview.overlay-only.png # 独立浮层特写
 │           └── preview.phone.png        # B 站手机端预览
