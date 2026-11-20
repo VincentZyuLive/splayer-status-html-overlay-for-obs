@@ -8,15 +8,15 @@
 
 > ↓ 透明浮层效果：独立展示歌曲封面、歌名、歌词、播放进度与时间。
 
-![透明浮层效果](docs/preview.overlay-only.png)
+![透明浮层效果](docs/images/preview/preview.overlay-only.png)
 
 > ↓ OBS 端效果：浏览器源 `splayer-overlay` 叠加在 OBS 中，展示封面、歌曲信息、三行歌词与播放时间。
 
-![OBS 端效果](docs/preview.obs.png)
+![OBS 端效果](docs/images/preview/preview.obs.png)
 
 > ↓ B 站手机客户端效果：同一套歌词挂件在手机 B 站直播间中的实际观看效果。
 
-![B 站手机客户端效果](docs/preview.phone.png)
+![B 站手机客户端效果](docs/images/preview/preview.phone.png)
 
 项目已从 Gist 迁移到本仓库：
 
@@ -42,8 +42,11 @@
 ├── configure.py        # 修改 host、port 和字体
 ├── download_font.py    # 下载最新版 LXGW WenKai 字体
 ├── docs/
-│   ├── preview.obs.png   # OBS 端预览
-│   └── preview.phone.png # B 站手机端预览
+│   └── images/
+│       └── preview/
+│           ├── preview.obs.png          # OBS 端预览
+│           ├── preview.overlay-only.png # 独立浮层特写
+│           └── preview.phone.png        # B 站手机端预览
 ├── README.md
 ├── .gitattributes      # 让 Markdown 计入 GitHub 语言统计
 ├── .gitignore
