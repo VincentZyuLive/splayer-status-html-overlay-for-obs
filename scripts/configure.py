@@ -14,7 +14,11 @@ import urllib.request
 from pathlib import Path
 from typing import Optional
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = (
+    Path(__file__).resolve().parent.parent
+    if Path(__file__).resolve().parent.name == "scripts"
+    else Path(__file__).resolve().parent
+)
 DEFAULT_HTML = BASE_DIR / "index.html"
 DEFAULT_FONT = BASE_DIR / "fonts" / "LXGWWenKai-Regular.ttf"
 

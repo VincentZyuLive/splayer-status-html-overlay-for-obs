@@ -13,7 +13,11 @@ import urllib.request
 from pathlib import Path
 from typing import Optional
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = (
+    Path(__file__).resolve().parent.parent
+    if Path(__file__).resolve().parent.name == "scripts"
+    else Path(__file__).resolve().parent
+)
 DEFAULT_OUTPUT = BASE_DIR / "fonts" / "LXGWWenKai-Regular.ttf"
 DEFAULT_ASSET = "LXGWWenKai-Regular.ttf"
 API_URL = "https://api.github.com/repos/lxgw/LxgwWenKai/releases/latest"

@@ -39,8 +39,9 @@
 ```text
 .
 ├── index.html          # OBS 加载的挂件页面
-├── configure.py        # 修改 host、port 和字体
-├── download_font.py    # 下载最新版 LXGW WenKai 字体
+├── scripts/
+│   ├── configure.py     # 修改 host、port 和字体
+│   └── download_font.py # 下载最新版 LXGW WenKai 字体
 ├── docs/
 │   └── images/
 │       └── preview/
@@ -83,12 +84,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```bash
 # 下载字体
-uv run python download_font.py
-uv run python download_font.py --proxy http://127.0.0.1:7890
+uv run python scripts/download_font.py
+uv run python scripts/download_font.py --proxy http://127.0.0.1:7890
 
 # 修改配置
-uv run python configure.py
-uv run python configure.py \
+uv run python scripts/configure.py
+uv run python scripts/configure.py \
   --host 127.0.0.1 \
   --port 14558 \
   --font fonts/LXGWWenKai-Regular.ttf
@@ -98,16 +99,16 @@ uv 会自动准备 Python 环境；脚本没有第三方依赖，不需要额外
 
 ### 🔤 3. 下载字体（可选）
 
-默认字体是霞鹜文楷（LXGW WenKai）。如果系统已经安装该字体，可以跳过这一步，或者后面用 `configure.py --system-font` 切换为系统字体。
+默认字体是霞鹜文楷（LXGW WenKai）。如果系统已经安装该字体，可以跳过这一步，或者后面用 `python3 scripts/configure.py --system-font` 切换为系统字体。
 
 ```bash
-python3 download_font.py
+python3 scripts/download_font.py
 ```
 
 需要代理时：
 
 ```bash
-python3 download_font.py --proxy http://127.0.0.1:7890
+python3 scripts/download_font.py --proxy http://127.0.0.1:7890
 ```
 
 脚本会读取 [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) 的最新 release，并保存为：
@@ -123,13 +124,13 @@ fonts/LXGWWenKai-Regular.ttf
 交互模式：
 
 ```bash
-python3 configure.py
+python3 scripts/configure.py
 ```
 
 直接指定参数：
 
 ```bash
-python3 configure.py \
+python3 scripts/configure.py \
   --host 127.0.0.1 \
   --port 14558 \
   --font fonts/LXGWWenKai-Regular.ttf
@@ -201,15 +202,15 @@ OBS 浏览器源默认就是透明背景，不需要额外写“自定义 CSS”
 ### 🔌 页面显示“等待 SPlayer-Next 连接”
 
 - 确认 SPlayer 的“允许外部控制”和“启用 WebSocket”已打开
-- 确认 `configure.py` 设置的 host/port 与 SPlayer 一致
+- 确认 `scripts/configure.py` 设置的 host/port 与 SPlayer 一致
 - 跨机器使用时，检查防火墙是否放行端口
 - 浏览器源和 SPlayer 在同一台机器时优先使用 `127.0.0.1`
 
 ### 🔤 字体没有生效
 
 - 确认 `fonts/LXGWWenKai-Regular.ttf` 存在
-- 运行 `python3 configure.py` 后重新生成配置
-- 如果使用系统字体，运行 `python3 configure.py --system-font`
+- 运行 `python3 scripts/configure.py` 后重新生成配置
+- 如果使用系统字体，运行 `python3 scripts/configure.py --system-font`
 - 修改后刷新 OBS 浏览器源
 
 ### 🌐 下载字体很慢或失败
@@ -217,7 +218,7 @@ OBS 浏览器源默认就是透明背景，不需要额外写“自定义 CSS”
 使用代理：
 
 ```bash
-python3 download_font.py --proxy http://127.0.0.1:7890
+python3 scripts/download_font.py --proxy http://127.0.0.1:7890
 ```
 
 也可以手动从 [lxgw/LxgwWenKai releases](https://github.com/lxgw/LxgwWenKai/releases) 下载 `LXGWWenKai-Regular.ttf`，放到 `fonts/` 目录。
